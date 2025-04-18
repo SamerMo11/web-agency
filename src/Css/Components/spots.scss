@@ -1,0 +1,104 @@
+$color1:#fff;
+$color2:#dd42fa;
+$color3:#eebb66;
+$color4:#ff8039;
+$color5:#000;
+@font-face {
+    font-family: 'Unbounded'; /* اسم الخط اللي هتستخدمه */
+    src: url('../../Assets//Font/Unbounded-VariableFont_wght.ttf') format('truetype');
+  }
+@font-face {
+    font-family: 'roboto'; /* اسم الخط اللي هتستخدمه */
+    src: url('../../Assets//Font/Roboto-VariableFont_wdth\,wght.ttf') format('truetype');
+  }
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.start-center{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.start-column{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+.center-start{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+.center-column{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.between-column{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.between-start-column{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-direction: column;
+    
+}
+.between-start{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-wrap: wrap;
+    // flex-direction: column;
+}
+.spotsComp{
+    @extend .between-start-column;
+    width: 25%;
+    height: 40%;
+    border: 2px solid #fff;
+    padding: 3% 0 3% 3%;
+    position: relative;
+    background-color: $color5;
+    // z-index: 3;
+}
+// .spotsComp::before{
+//     content: '';
+//     position: absolute;
+//     top: 10px;
+//     left: 0;
+//     background-color: $color1;
+//     width: 100%;
+//     height: 100%;
+//     transform: skew(5deg, 0deg);
+//     z-index: -1;
+// }
+.spotsComp img{
+    width: 5%;
+    padding: 10px;
+    border-radius: 50%;
+    background-image: linear-gradient(to bottom, $color2, $color4);
+    box-shadow: 0px 0px 0px 7.45px #E583AD1a, 0px 0px 0px 17.85px #EBAC7B33;
+}
+.spotsComp .head{
+    color: $color1;
+    font-family: 'Unbounded', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    // z-index: 2;
+}
+.spotsComp .text{
+    color: $color1;
+    // z-index: 2;
+}

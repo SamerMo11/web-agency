@@ -1,0 +1,57 @@
+$color1:#fff;
+$color2:#dd42fa;
+$color3:#eebb66;
+$color4:#ff8039;
+$color5:#000;
+@font-face {
+    font-family: 'Unbounded'; /* اسم الخط اللي هتستخدمه */
+    src: url('../../Assets//Font/Unbounded-VariableFont_wght.ttf') format('truetype');
+  }
+@font-face {
+    font-family: 'roboto'; /* اسم الخط اللي هتستخدمه */
+    src: url('../../Assets//Font/Roboto-VariableFont_wdth\,wght.ttf') format('truetype');
+  }
+  .start-start-column{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+}
+.circleComp{
+    width: 45%;
+    height: 30%;
+    @extend .start-start-column;
+    position: relative;
+    gap: 15px;
+}
+.circleComp:hover span{
+    // color: transparent;
+    // background-clip: text;
+    background-image: linear-gradient(to bottom, $color2, $color3);
+}
+.circleComp > *{
+    color: $color1;
+}
+.circleComp span{
+    position: absolute;
+    top: -60%;
+    left: 0%;
+    font-family: 'Unbounded',sans-serif;
+    // color: #ffffff66;
+    font-size: 60px;
+    transition: .3s;
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(to bottom, #ffffff66, #ffffff66);
+}
+.circleComp .head{
+    font-family: 'Unbounded',sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.circleComp .text{
+    line-height: 20px;
+    width: 95%;
+
+}
