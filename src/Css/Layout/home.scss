@@ -11,7 +11,7 @@ $color1:#fff;
 $color2:#dd42fa;
 $color3:#eebb66;
 $color4:#ff8039;
-$color5:#000;
+$color5:#171717;
 
 .center{
     display: flex;
@@ -44,6 +44,7 @@ $color5:#000;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 .between-column{
     display: flex;
@@ -198,4 +199,63 @@ $color5:#000;
     width: 35%;
     height: 100%;
     object-fit: contain;
+}
+.homePage .spotsCont{
+    width: 100%;
+    height: 100vh;
+    @extend .between;
+}
+
+.homePage .spotsCont .leftCont{
+    width: 55%;
+    height: 90%;
+    @extend .between;
+}
+.homePage .spotsCont .rightCont{
+    width: 40%;
+    height: 50%;
+    @extend .between-start-column;
+}
+
+.homePage .spotsCont .rightCont p:nth-child(1){
+    width: 45%;
+}
+.homePage .spotsCont .rightCont p:nth-child(2){
+    font-size: 50px;
+    font-weight: 600;
+    font-family: 'Unbounded', sans-serif;
+    color: $color1;
+    width: 80%;
+}
+.homePage .spotsCont .rightCont  p:nth-child(2) span{
+    color: $color3;
+    font-size: 50px;
+    font-weight: 600;
+    font-family: 'Unbounded', sans-serif;
+    
+}
+.homePage .spotsCont .rightCont  p:nth-child(3){
+    font-size: 20px;
+    line-height: 30px;
+    width: 90%;
+    color: $color1;
+    width: 90%;
+
+
+}
+.homePage .spotsCont .rightCont  a{
+    text-transform: capitalize;
+    color: $color1;
+    background-image: linear-gradient(to right, $color3 , $color2);
+    text-decoration: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    transition: .3s;
+}
+.homePage .spotsCont .rightCont  a:hover{
+    color: $color5;
+    background-image: linear-gradient(to right, $color1 , $color1);
+
 }

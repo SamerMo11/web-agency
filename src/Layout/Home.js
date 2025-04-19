@@ -1,14 +1,22 @@
+import { Link } from "react-router-dom"
 import "../Css/Layout/home.scss"
+
 import vector from "../Assets/Main/Vector.svg"
 import hero from "../Assets/Home/hero.webp"
 import doubleWave from "../Assets/Main/doubleWave.svg"
 import circle from "../Assets/Home/circle.webp"
+import halfStar from "../Assets/Main/side.svg"
+
 import Sec2Comp from "../Components/sec2"
 import SmallHead from "../Components/SmallHead"
-import halfStar from "../Assets/Main/side.svg"
 import VisionComp from "../Components/VisionComp"
 import CircleComp from "../Components/CircleComp"
-// import sec2Img from "../Assets/Home/about.webp"
+import SpotComp from "../Components/SpotComp"
+
+import circleData from '../Data/Circle';
+import spotData from '../Data/Spot';
+import visionData from '../Data/Vision';
+
 export default function Home(){
     return(
         <div className="homePage">
@@ -43,18 +51,8 @@ export default function Home(){
         <SmallHead smallHead="our vision"/>
         <p className="visionsHead">Who we <span>work</span> for</p>
         <div className="visionsCont">
-        <VisionComp
-        head="Agencies"
-        text="We support industry leading agencies as a reliable white-label outsourcing partner."
-        />
-        <VisionComp
-        head="Companies"
-        text="Get the service of an agency for the hourly rate of a freelancer."
-        />
-        <VisionComp
-        head="Organisation"
-        text="We love to support green, sustainable and positive impact organisation."
-        />
+        {visionData.map((item, index) => (
+                  <VisionComp key={index} visionIcon={item.visionIcon} head={item.head} text={item.text}/>))}
         </div>
         </div>
 
@@ -67,26 +65,9 @@ export default function Home(){
                 </div>
 
                 <div className="circleComps">
-                        <CircleComp
-                        num="1"
-                        head="performance"
-                        text="We deliver blazing fast frontends. Whether it's a ReactJS app or a WordPress theme, we score full marks."
-                        />
-                        <CircleComp
-                        num="2"
-                        head="Accessibility"
-                        text="We aim to develop products that are accessible to everyone."
-                        />
-                        <CircleComp
-                        num="3"
-                        head="Best Practices"
-                        text="We use latest and best technologies and standards to ensure our products are on the leading edge."
-                        />
-                        <CircleComp
-                        num="4"
-                        head="SEO"
-                        text="Our products are technically optimized and prepared for top-notch search engine optimisation."
-                        />
+                {circleData.map((item, index) => (
+                      <CircleComp key={index} num={item.num} head={item.head} text={item.text}/>
+                    ))}
                 </div>
             </div>
             <img src={circle} alt="ourCircleImage" loading="lazy"/>
@@ -94,7 +75,17 @@ export default function Home(){
 
 
         <div className="spotsCont">
+            <div className="leftCont">
+                    {spotData.map((item, index) => (
+                          <SpotComp key={index} spotIcon={item.spotIcon} head={item.head} text={item.text}/> ))}
+            </div>
+            <div className="rightCont">
+                    <SmallHead smallHead="our sweet spots"/>
+                    <p className="title">Our <span>sweet</span> spots</p>
+                    <p className="text">As a Web Agency in Berlin we are best in designing and developing modern, highly performant websites and web apps built on top of ReactJs.</p>
+                    <Link>work with us</Link>
 
+              </div>
         </div>
 
  

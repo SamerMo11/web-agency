@@ -2,7 +2,7 @@ $color1:#fff;
 $color2:#dd42fa;
 $color3:#eebb66;
 $color4:#ff8039;
-$color5:#000;
+$color5:#171717;
 @font-face {
     font-family: 'Unbounded'; /* اسم الخط اللي هتستخدمه */
     src: url('../../Assets//Font/Unbounded-VariableFont_wght.ttf') format('truetype');
@@ -102,3 +102,16 @@ $color5:#000;
     color: $color1;
     // z-index: 2;
 }
+.mouse-glow {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, #dd42fa, #eebb66);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    filter: blur(30px);
+    z-index: 0;
+  }

@@ -2,7 +2,7 @@ $color1:#fff;
 $color2:#dd42fa;
 $color3:#eebb66;
 $color4:#ff8039;
-$color5:#000;
+$color5:#171717;
 @font-face {
     font-family: 'Unbounded'; /* اسم الخط اللي هتستخدمه */
     src: url('../../Assets//Font/Unbounded-VariableFont_wght.ttf') format('truetype');
@@ -65,31 +65,29 @@ $color5:#000;
 }
 .spotsComp{
     @extend .between-start-column;
-    width: 25%;
-    height: 40%;
+    width: 40%;
+    height: 35%;
     border: 2px solid #fff;
-    padding: 3% 0 3% 3%;
+    padding: 3% 3% 3% 3%;
     position: relative;
     background-color: $color5;
-    // z-index: 3;
+    transform-style: preserve-3d;
+    // transition: transform 0.15s ease;
+    perspective: 1000px;
 }
-// .spotsComp::before{
-//     content: '';
-//     position: absolute;
-//     top: 10px;
-//     left: 0;
-//     background-color: $color1;
-//     width: 100%;
-//     height: 100%;
-//     transform: skew(5deg, 0deg);
-//     z-index: -1;
-// }
+.spotsComp:nth-child(1),
+.spotsComp:nth-child(3){
+    align-self: self-start;
+}
+.spotsComp:nth-child(2),
+.spotsComp:nth-child(4){
+    align-self: self-end;
+}
+
+
 .spotsComp img{
-    width: 5%;
-    padding: 10px;
-    border-radius: 50%;
-    background-image: linear-gradient(to bottom, $color2, $color4);
-    box-shadow: 0px 0px 0px 7.45px #E583AD1a, 0px 0px 0px 17.85px #EBAC7B33;
+    width: 20%;
+
 }
 .spotsComp .head{
     color: $color1;
@@ -100,5 +98,7 @@ $color5:#000;
 }
 .spotsComp .text{
     color: $color1;
+    font-size: 14px;
+    line-height: 20px;
     // z-index: 2;
 }
